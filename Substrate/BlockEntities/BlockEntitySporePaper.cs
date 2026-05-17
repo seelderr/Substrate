@@ -36,7 +36,7 @@ namespace Substrate.BlockEntities
         }
 
         private double _startCollectingHours = 0;
-        private string _sporeType = null;
+        private string? _sporeType = null;
 
         public BlockEntitySporePaper()
         {

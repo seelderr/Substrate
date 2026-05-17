@@ -32,7 +32,7 @@ namespace Substrate.BlockEntities
         internal double ElapsedColonizeHours => _elapsedColonizeHours;
         internal double ColonizeDuration => _colonizeDuration;
 
-        private string _refundItem = null;
+        private string? _refundItem = null;
         private double _startGrowingHours = 0;
         private double _elapsedColonizeHours = 0;
         private double _nextGrowHours = 0;
@@ -40,7 +40,7 @@ namespace Substrate.BlockEntities
         private double _lastColonizeProgressTimestamp = 0;
 
         internal string? InoculatedMushroom => string.IsNullOrWhiteSpace(_inoculatedMushroom) ? null : _inoculatedMushroom;
-        private string _inoculatedMushroom = string.Empty;
+        private string? _inoculatedMushroom = string.Empty;
 
         internal float Fertility
         {
@@ -220,7 +220,7 @@ namespace Substrate.BlockEntities
             return true;
         }
 
-        public override void OnBlockPlaced(ItemStack byItemStack = null)
+        public override void OnBlockPlaced(ItemStack? byItemStack = null)
         {
             base.OnBlockPlaced(byItemStack);
 
