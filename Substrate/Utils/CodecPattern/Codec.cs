@@ -41,6 +41,7 @@ namespace Substrate.Utils.CodecPattern
         public static ICodec<Dictionary<TKey, TValue>> DictionaryOf<TKey, TValue>(
             ICodec<TKey> keyCodec,
             ICodec<TValue> valueCodec)
+            where TKey : notnull
         {
             return new DictionaryCodec<TKey, TValue>(keyCodec, valueCodec);
         }
@@ -91,6 +92,7 @@ namespace Substrate.Utils.CodecPattern
 
     // Dictionary codec
     public class DictionaryCodec<TKey, TValue> : ICodec<Dictionary<TKey, TValue>>
+        where TKey : notnull
     {
         private readonly ICodec<TKey> keyCodec;
         private readonly ICodec<TValue> valueCodec;
